@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <img src="{% static 'images/ecom banner.jpg' %}" height="500px;" width="100%">
+</div>
+
+<div class="container-fluid mt-4" >
+    <h3 class="text-center">Our Collections</h3>
+    <p> Electronic commerce (e-commerce) refers to companies and individuals that buy and sell goods and services over the internet. E-commerce operates in different types of market segments and can be conducted over computers, tablets, smartphones, and other smart devices.E-commerce refers to the buying and selling of goods and services over an electronic network, primarily the internet. It can occur as business-to-business (B2B), business-to-consumer (B2C), consumer-to-consumer or consumer-to-business.0 E-commerce operates in different types of market segments and can be conducted over computers, tablets, smartphones, and other smart devices.2 It draws on technologies such as mobile commerce, electronic funds transfer, supply chain management, Internet marketing, online transaction processing, electronic data interchange (EDI), inventory management systems, and automated data collection systems.1 The evolution and history of e-commerce is fascinating, and it is advancing at an even quicker pace today.3</p>
+</div>
+
+<div  class="container-fluid mt-4" style="background-color:#3ba1c5;">
+    <div class="row" >
+        {% for i in c %}
+        <div class="col-sm-3"style="margin-bottom:10px;" >
+            <div class="card" style="width: 18rem;">
+  <img src="{{i.image.url}}" class="card-img-top" style="height:250px;" alt="...">
+  <div class="card-body"style="background-color:yellow;">
+    <h5 class="card-title">{{i.cname}}</h5>
+    <p class="card-text">{{i.description}}</p>
+    <a href="{% url 'shop:allproducts' i.cname %}" style="position:relative;left:30%;" class="btn btn-primary">PRODUCTS</a>
+  </div>
+</div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

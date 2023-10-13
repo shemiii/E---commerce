@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'Base.html' %}
+{% block content %}
+<h1> Login </h1>
+<center>
+<form method="POST" style="width:50%;">
+    {% csrf_token %}
+<div class="mb-3">
+  <label  class="form-label">Username</label>
+  <input type="text" class="form-control" name="u" placeholder="Enter Username">
+</div>
+<div class="mb-3">
+   <label  class="form-label">Password</label>
+  <input type="password" class="form-control" name="p" placeholder="Enter Password">
+</div>
+
+    <div class="mb-3">
+  <input type="submit" style="width:20%;" class="form-control" >
+</div>
+</form>
+<!--    {% if messages %}-->
+<!--    <ul>-->
+<!--         {% for msg in messages %}-->
+<!--        <li>{{msg}}</li>-->
+<!--         {% endfor %}-->
+<!--    </ul>-->
+<!--    {% endif %}-->
+<!--</center>-->
+
+{% endblock %}

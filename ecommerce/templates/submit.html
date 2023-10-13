@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% for i in s %}
+<div class="container">
+    <h3 class="text-change text-sucess">Name of customer : {{i.user}}</h3>
+    <tr>
+    <td><h6 class="text-center text-danger">{{i.product}}</h6></td>
+    <td><h6 class="text-center text-danger">Quantity : {{i.noofitems}}</h6></td>
+    <td><h6 class="text-center text-danger">Delivery Address : {{i.address}}</h6></td>
+    <td><h6 class="text-center text-danger">Phone Number : {{i.phone}}</h6></td>
+    <td><h6 class="text-center text-danger">Order Status : {{i.order_status}}</h6></td>
+    <td><h6 class="text-center text-danger">Delivery Status : {{i.delivery_status}}</h6></td>
+    <td><h6 class="text-center text-danger">Ordered On : {{i.date_added}}</h6></td>
+    <td><h6 class="text-center text-danger">subtotal : {{i.subtotal}}</h6></td>
+    <td><h6 class="text-center text-danger"><img src="{{i.product.image.url}}"></h6></td>
+    </tr>
+
+</div>
+{% endfor %}
+{% endblock %}
